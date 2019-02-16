@@ -39,3 +39,11 @@ location /links {
 
 
 /usr/sbin/nginx -s reload -c ~/.nginx/nginx.conf
+
+
+cd ~
+wget -qO unrar.tar.gz http://www.rarlab.com/rar/unrarsrc-5.5.8.tar.gz
+tar xf ~/unrar.tar.gz
+make -C ~/unrar
+make -C ~/unrar install DESTDIR="$HOME"
+rm -rf ~/unrar{,.tar.gz}
